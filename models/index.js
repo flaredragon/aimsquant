@@ -6,7 +6,7 @@ const Schema   = mongoose.Schema,
 const stockSchema = Schema({
   id: ObjectId,
   ticker: String,
-  priceHistory: {Open:[Number],High:[Number],Low:[Number],Last:[Number],Close:[Number],TTQ:[Number],Turnover:[Number]},
+  priceHistory: {Dates:[String],Open:[Number],High:[Number],Low:[Number],Last:[Number],Close:[Number],TTQ:[Number],Turnover:[Number]},
   createdDate: Date,
   updatedDate: Date
 });

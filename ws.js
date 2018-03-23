@@ -13,11 +13,12 @@ wss.on('connection', function (ws) {
 			arr.push(message);
     //console.log(JSON.stringify(response.data));
 			var data = response.data.dataset.data;
-			var openarr = [],higharr = [],lowarr = [],lastarr = [],closearr =[] ,ttqarr = [],turnoverarr = [];
+			var openarr = [],higharr = [],lowarr = [],lastarr = [],closearr =[] ,ttqarr = [],turnoverarr = [],dates = [];
 
 			data.forEach(function(element) {
 				//console.log(element[1]);
-			  	openarr.push(element[1]);
+				dates.push(element[0]);
+				openarr.push(element[1]);
 				higharr.push(element[2]);
 				lowarr.push(element[3]);
 				lastarr.push(element[4]);
@@ -33,6 +34,7 @@ wss.on('connection', function (ws) {
 			var obj = {
 				ticker:tickers,
 				priceHistory:{
+					Dates:dates,
 					Open:openarr,
 					High:higharr,
 					Low:lowarr,
