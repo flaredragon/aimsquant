@@ -31,13 +31,3 @@ How is the data populated (via inter-server communication)?
 2. This web-socket server is responsible for doing any computation and fetching the prices from an external third-party API.
 
 3.  On getting, user request the API checks whether the data for the stock is present in the database. If it's not present, a request is sent to the web-socket server to fetch the data. On successful data retrieval, the data is returned back to the main server (via web-socket) and updated in the database. After update, the data is sent back to the user for the relevant query.
-
-External API:
-https://www.quandl.com/api/v3/datasets/NSE/{SYMBOL}.json?api_key=MX4zkypoSjUzp8CyotQg
-
-Example:
-https://www.quandl.com/api/v3/datasets/NSE/TCS.json?api_key=MX4zkypoSjUzp8CyotQg
-
-Other Codes that can be used: WIPRO, INFY, TATAMOTORS
-
-In the JSON file, complete history of TCS stock data is fetched. The relevant fields are column_names and data. Please let me know if there is any confusion about the data file.
